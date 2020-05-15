@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   var output = document.getElementById('result')
   var currentValue = null
+  var currentOperation = null
 
   document.getElementById('zero').addEventListener('click', () => { addNumber('0') })
   document.getElementById('one').addEventListener('click', () => { addNumber('1') })
@@ -14,16 +15,16 @@ document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('nine').addEventListener('click', () => { addNumber('9') })
 
   document.getElementById('clear').addEventListener('click', () => { clearAll() })
-  document.getElementById('porcent').addEventListener('click', () => { /*função de transformar o valor em porcentagem*/ })
+  document.getElementById('porcent').addEventListener('click', () => { generatePorcent() })
   document.getElementById('delete').addEventListener('click', () => { deleteLastNumber() })
-  document.getElementById('inverse-sign').addEventListener('click', () => { /*função de inverter o sinal*/ })
+  document.getElementById('inverse-sign').addEventListener('click', () => { generateInverseValue() })
   document.getElementById('dot').addEventListener('click', () => { addNumber('.') })
 
-  document.getElementById('division').addEventListener('click', () => { /*função de divisão*/ })
-  document.getElementById('multiplication').addEventListener('click', () => { /*função de multiplicação*/ })
-  document.getElementById('subtraction').addEventListener('click', () => { /*função de subtração*/ })
-  document.getElementById('sum').addEventListener('click', () => { /*função de soma*/ })
-  document.getElementById('equal').addEventListener('click', () => { /*função de apresentar valor final*/ })
+  document.getElementById('division').addEventListener('click', () => { initialOperation('division') })
+  document.getElementById('multiplication').addEventListener('click', () => { initialOperation('multiplication') })
+  document.getElementById('subtraction').addEventListener('click', () => { initialOperation('subtraction') })
+  document.getElementById('sum').addEventListener('click', () => { initialOperation('sum') })
+  document.getElementById('equal').addEventListener('click', () => { initialOperation('equal') })
 
   function addNumber (value) {
     if (value == '.' && output.value.includes('.')) {
@@ -40,6 +41,45 @@ document.addEventListener('DOMContentLoaded', function () {
   function clearAll () {
     output.value = null
     currentValue = null
+    currentValue = null
+  }
+
+  function generatePorcent () {
+    output.value /= 100
+  }
+
+  function generateInverseValue () {
+    output.value *= -1
+  }
+
+  function initialOperation (operation) {
+    if (currentOperation == null) {
+      currentOperation = operation
+      currentValue = output.value
+      output.value = null
+    } else {
+      switch (currentOperation) {
+        case 'division':
+          applyDivision()
+          break
+        case 'multiplication':
+          // chama a funçao
+          break
+        case 'subtration':
+          //chama a função
+          break
+        case 'sum':
+          //chama a função
+          break
+        case 'equal':
+          //apresenta resultado
+          break
+        default:
+          // Erro
+          break 
+      }
+      currentOperation = operation
+    }
   }
 
   function transformNumber (string) {
@@ -49,5 +89,9 @@ document.addEventListener('DOMContentLoaded', function () {
   function transformString (number) {
     return number.toString()
   }
-  
+
+  function applyDivision () {
+    output.value = currentValue/output.value
+    // verificar continuação da operação
+  }
 })
