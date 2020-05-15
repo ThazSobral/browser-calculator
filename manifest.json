@@ -1,8 +1,11 @@
 {
   "manifest_version": 2,
-  "name": "Caixa",
+  "name": "Browser Calculator",
   "version": "1.0",
-  "description": "Transforma",
+  "description": "Quer uma calculadora simples na hora? Então essa é pra você.",
+  "icons": {
+    "128": "./assets/calculadora.png"
+  },
   "browser_action": {
     "default_popup": "index.html"
   }

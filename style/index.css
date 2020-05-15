@@ -1,0 +1,43 @@
+body {
+  height: 100%;
+  background-color: #2e2d2d ;
+}
+
+body > main > input {
+  padding: 0 0%;
+  height: 30px;
+  font-size: 13px;
+  background-color: #ecedeb;
+}
+
+body > main > table {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.buttons {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #ffff;
+  font-weight: bolder;
+}
+
+.warn {
+  background-color: #e04343;
+  color: #ecedeb;
+}
+
+.accept {
+  background-color: #58ad3e;
+  /* color: #ecedeb; */
+}
+
+.functional {
+  background-color: #d6d02b;
+  /* color: #ecedeb; */
+}
+
+.other {
+  background-color: #2b6ad6;
+}
