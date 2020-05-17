@@ -6,10 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var currentValue = '0'
   var accumulatedValue = 0
   var operationWasPerformed = false
-  var nextOperation = ''
   var testMode = false
-  var colors = ['#d49f02', '#1842ab', '#258c15', '#b50d0d']
-  var color = ''
 
   document.getElementById('zero').addEventListener('click', () => { addValue('0') })
   document.getElementById('one').addEventListener('click', () => { addValue('1') })
@@ -75,7 +72,6 @@ document.addEventListener('DOMContentLoaded', function () {
     currentValue = '0'
     accumulatedValue = 0
     operationWasPerformed = false
-    nextOperation = ''
 
     showTest()
   }
@@ -92,7 +88,6 @@ document.addEventListener('DOMContentLoaded', function () {
       if (currentValue.includes('.')){
         return
       } else if(currentValue == '0') {
-        varTest = 'ok'
         addValue('0.')
         return
       }
@@ -163,7 +158,6 @@ document.addEventListener('DOMContentLoaded', function () {
       'current-value',
       'accumulated-value',
       'operation-was-performed',
-      'next-operation',
       'var-test'
     ]
     const body = document.body
@@ -177,7 +171,9 @@ document.addEventListener('DOMContentLoaded', function () {
       var text = document.createTextNode(`${id}: `)
       var p = document.createElement('p')
       
+      div.setAttribute('style', 'color: #fff; margin-top: 20px;')
       p.setAttribute('id', id)
+
       b.append(text)
       div.appendChild(b)
       div.appendChild(p)
@@ -195,8 +191,6 @@ document.addEventListener('DOMContentLoaded', function () {
       document.getElementById('current-value').innerText = currentValue
       document.getElementById('accumulated-value').innerText = accumulatedValue
       document.getElementById('operation-was-performed').innerText = operationWasPerformed
-      document.getElementById('next-operation').innerText = nextOperation
-      document.getElementById('var-test').innerText = varTest
     }
   }
 
