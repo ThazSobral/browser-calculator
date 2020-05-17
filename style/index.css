@@ -1,6 +1,6 @@
 body {
   height: 100%;
-  /* background-color: #2e2d2d ; */
+  background-color: #000 ;
 }
 
 body > main > input {
@@ -21,23 +21,30 @@ body > main > table {
   border-radius: 5px;
   background-color: #ffff;
   font-weight: bolder;
-}
-
-.warn {
-  background-color: #e04343;
-  color: #ecedeb;
-}
-
-.accept {
-  background-color: #58ad3e;
-  /* color: #ecedeb; */
+  outline: 0px auto -webkit-focus-ring-color;
 }
 
 .functional {
-  background-color: #d6d02b;
-  /* color: #ecedeb; */
+  background-color: #d49f02;
+  color: #fff;
 }
 
-.other {
-  background-color: #2b6ad6;
+.extra {
+  background-color: #8a8a8a;
+  color: #fff;
+}
+
+#logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  padding: 0;
+  margin-top: 10px;
+  border-radius: 7%;
+
+
+  background-color: #fff;
+  font-size: 7px;
+  color: #000;
 }

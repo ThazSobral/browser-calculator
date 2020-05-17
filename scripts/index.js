@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
   var operationWasPerformed = false
   var nextOperation = ''
   var testMode = false
-  var varTest = ''
+  var colors = ['#d49f02', '#1842ab', '#258c15', '#b50d0d']
+  var color = ''
 
   document.getElementById('zero').addEventListener('click', () => { addValue('0') })
   document.getElementById('one').addEventListener('click', () => { addValue('1') })
@@ -45,6 +46,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     if (event.key == 'Delete') {
       deleteLastNumber()
+    }
+    if (event.key == 't') {
+      if (testMode) {
+        return
+      }
+      test()
     }
 
     showTest()
@@ -192,6 +199,5 @@ document.addEventListener('DOMContentLoaded', function () {
       document.getElementById('var-test').innerText = varTest
     }
   }
-  test()
 
 })
